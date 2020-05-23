@@ -1,0 +1,48 @@
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+            <a class="nav-link" [routerLink]="['']">Home</a>
+        </li>
+        <li class="nav-item active">
+            <a class="nav-link" [routerLink]="['/add']">Add Data</a>
+        </li>
+    </ul>
+</nav>
+<div class="container pt-2">
+    <div class="row justify-content-center">
+        <div class="col-sm-12">
+            <div class="card">
+                <div>
+                    
+                </div>
+                <div class="card-header" style="text-align: center;">
+                    Dashboard
+                </div>
+                <div class="card-body">
+                    <table class="table table-responsive table-bordered table-striped">
+                        <thead>
+                            <th>solutionName</th>
+                            <th>Description</th>
+                            <th>title</th>
+                            <th>moreDescription</th>
+                            <th>category</th>
+                            <th>Update</th>
+                            <th>Delete</th>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let item of data">
+                                <td> {{ item.solutionName }} </td>
+                                <td> {{ item.description }} </td>
+                                <td> {{ item.title }} </td>
+                                <td> {{ item.moreDescription }} </td>
+                                <td> {{ item.category }} </td>
+                                <td> <button class="btn btn-success" (click)="onUpdate(item)">Update</button> </td>
+                                <td> <button class="btn btn-danger" (click)="onDelete(item)">Delete</button> </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
